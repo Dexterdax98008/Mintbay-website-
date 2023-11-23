@@ -1,0 +1,21 @@
+
+<form action="process.php">
+  <form action="sign-up-handler.html" method="post" enctype="multipart/form-data">
+    <p>Input your email and password :</p>
+    <input type="text" name="email" id="email" placeholder="Email Address" />
+    <input type="password" name="password" id="password" placeholder="Password" />
+    <button type="submit" name="submit" value="Submit" />
+
+<?php
+$post = $_POST;
+$email = parse_str($post, 'name=email');
+$password = parse_str($post, 'name=password');
+if(empty($email) or strlen($email) < 4) {
+    $error = "Email address must be at least 4 characters long.";
+
+<?php
+if (file_exists("json.php")) {
+    include("home page.html");
+}
+header("location: home page.html");
+
